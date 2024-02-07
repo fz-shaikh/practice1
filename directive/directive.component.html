@@ -1,0 +1,57 @@
+<p>directive works!</p>
+
+<h2>Structural directive</h2>
+<!-- *ngIf -->
+
+<p *ngIf="age>18 && showData">{{sampaleData}}</p>
+
+<div *ngIf="showData">
+    This data will show onlt when the condition is true
+</div>
+
+<!-- *ngFor -->
+<select name="" id="">
+    <option *ngFor="let sub of subject">{{sub}}</option>
+</select>
+
+<table border="2">
+    <tr>
+        <td *ngFor="let subb of subject">{{subb}}</td>
+    </tr>
+</table>
+
+<!-- *ngSwitch -->
+
+<div [ngSwitch]="country">
+    <p *ngSwitchCase="'AUS'">Country is Austrelia</p>
+    <p *ngSwitchCase="'PAK'">Country is Pakistan</p>
+    <p *ngSwitchCase="'IND'">Country is INdia</p>
+    <p *ngSwitchCase="'NEW'">Country is Newzeeland</p>
+
+    <p *ngSwitchDefault> Not Found the country name</p>
+</div>
+
+<!-- Attribute Directive -->
+<!-- ngclass -->
+<div>
+    <p class="one">This is ngClass atribute directive</p>
+
+    <!-- <p [ngClass]="testClass">This is ngClass atribute directive</p> -->
+
+    <p [ngClass]="(this.age > 18 && this.showData == false) ? 'one': 'two'">Data with Ternory Oprator With ngClass</p>
+</div>
+
+<!-- ngStyle -->
+<div>
+    <p style="color: aqua;">This data with ngStyle</p>
+    <!-- <p [ngStyle]="{'color':'yellow'}">This data with ngStyle2</p> -->
+
+    <p [ngStyle]="testStyle">This data will show with ngStyle3</p>
+
+</div>
+
+<h2 appCustDirective>test Hello this is angular</h2>
+
+<p appCustDirective>this is Test of custom directive</p>
+
+<input type="text" appCustDirective>
